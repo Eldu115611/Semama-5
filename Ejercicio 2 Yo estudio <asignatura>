@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+
+public class Estudiante
+{
+    private List<string> asignaturas = new List<string> { "Matemáticas", "Física", "Química", "Historia", "Lengua" };
+
+    public void MostrarEstudios()
+    {
+        foreach (var asignatura in asignaturas)
+        {
+            Console.WriteLine($"Yo estudio {asignatura}");
+        }
+    }
+}
+
+class Programa
+{
+    static void Main()
+    {
+        Estudiante estudiante = new Estudiante();
+        estudiante.MostrarEstudios();
+    }
+}
