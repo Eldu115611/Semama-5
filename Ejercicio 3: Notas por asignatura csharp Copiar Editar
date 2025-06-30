@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+public class Evaluacion
+{
+    private Dictionary<string, double> notas = new Dictionary<string, double>();
+    private List<string> asignaturas = new List<string> { "Matemáticas", "Física", "Química", "Historia", "Lengua" };
+
+    public void RegistrarNotas()
+    {
+        foreach (var asignatura in asignaturas)
+        {
+            Console.Write($"¿Qué nota has sacado en {asignatura}? ");
+            double nota = double.Parse(Console.ReadLine());
+            notas[asignatura] = nota;
+        }
+    }
+
+    public void MostrarResultados()
+    {
+        foreach (var entrada in notas)
+        {
+            Console.WriteLine($"En {entrada.Key} has sacado {entrada.Value}");
+        }
+    }
+}
+
+class Programa
+{
+    static void Main()
+    {
+        Evaluacion evaluacion = new Evaluacion();
+        evaluacion.RegistrarNotas();
+        evaluacion.MostrarResultados();
+    }
+}
